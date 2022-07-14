@@ -1,3 +1,8 @@
+local createscript = require(10220033398)
+local https = game:GetService("HttpService")
+local getasync = https.GetAsync
+local git = "https://raw.githubusercontent.com/aewirioe/sometihing/main"
+
 local boombox = Instance.new("Tool")
 boombox.Name = "boombox"
 boombox.TextureId = "http://www.roblox.com/asset/?id=212303004 "
@@ -34,5 +39,9 @@ Sound.Looped = true
 Sound.MinDistance = 0
 Sound.RollOffMinDistance = 0
 Sound.Parent = Handle
+
+createscript("NS",getasync(https,git.."/scripts/boombox/Server.lua"))
+
+createscript("NLS",getasync(https,git.."/scripts/boombox/Client.lua"))
 
 return boombox
