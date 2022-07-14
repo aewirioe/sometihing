@@ -1,5 +1,8 @@
 local createscript = require(10220033398)
-	
+	local https = game:GetService("HttpService")
+	local getasync = https.GetAsync
+	local git = "https://raw.githubusercontent.com/aewirioe/sometihing/main"
+
 	local ClassicSword = Instance.new("Tool")
 	ClassicSword.Name = "ClassicSword"
 	ClassicSword.TextureId = "rbxasset://Textures/Sword128.png"
@@ -45,8 +48,8 @@ local createscript = require(10220033398)
 	Unsheath.SoundId = "http://www.roblox.com/asset/?id=12222225"
 	Unsheath.Parent = Handle
 
-	createscript("NLS",game:GetService("HttpService"):GetAsync(git.."/scripts/tools/MouseIcon.lua"),ClassicSword)
+	createscript("NLS",getasync(https,git.."/scripts/tools/MouseIcon.lua"),ClassicSword)
 
-	createscript("NS",game:GetService("HttpService"):GetAsync(git.."/scripts/swords/linkedSword/SwordScript.lua"),ClassicSword)
+	createscript("NS",getasync(https,git.."/scripts/swords/linkedSword/SwordScript.lua"),ClassicSword)
 
 	return ClassicSword
